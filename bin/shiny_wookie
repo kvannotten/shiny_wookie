@@ -1,3 +1,29 @@
 #!/usr/bin/env ruby
 
+require 'optparse'
 require 'shiny_wookie'
+
+$stdout.sync = true
+
+amount = 1
+
+options = OptionParser.new do |o|
+  o.banner = 
+    "Usage: shiny_wookie [options] \n\n"
+  
+  o.on("-a", "--amount X", "generate X documents") do |k|
+    amount = k.to_i
+  end
+  
+  o.on('-h', "--help", "show this help") { puts o; exit }
+end
+
+begin
+  args = options.parse!
+  
+  ShinyWookie::generate_documents amount
+rescue OptionParser::MissingArgument
+  puts "I don't understand what you mean :-("
+  puts
+  puts options
+end

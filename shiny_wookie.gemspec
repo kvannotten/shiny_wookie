@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = ShinyWookie::VERSION
   spec.authors       = ["Kristof Vannotten"]
   spec.email         = ["kristof@vannotten.be"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{A gem that generates random documents}
+  spec.summary       = %q{This gem creates a specified amount documents, containing randomly generated text}
+  spec.homepage      = "https://github.com/kvannotten/shiny_wookie"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
