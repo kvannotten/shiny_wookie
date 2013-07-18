@@ -21,7 +21,7 @@ describe ShinyWookie::Document do
   end
   
   it "writes to a file" do
-    @document.write_to_file "cv_", "document"
+    @document.write_to_file :prefix => "cv_", :name => "document", :extension => "txt"
     
     IO.read("cv_document.txt").should eql @document.content
     File.delete("cv_document.txt")

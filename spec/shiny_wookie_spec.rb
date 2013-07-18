@@ -5,16 +5,19 @@ describe ShinyWookie do
     ShinyWookie::VERSION.should_not be_nil
   end
   
-  it 'returns an array' do
-    documents = ShinyWookie.generate_documents
+  context "documents" do
+    it 'returns an array' do
+      documents = ShinyWookie.generate_documents
     
-    documents.should be_an_instance_of Array
-  end
+      documents.should be_an_instance_of Array
+    end
 
-  it 'contains documents' do
-    documents = ShinyWookie.generate_documents
+    it 'contains documents' do
+      documents = ShinyWookie.generate_documents
     
-    documents.first.should be_an_instance_of ShinyWookie::Document
+      documents.first.should be_an_instance_of ShinyWookie::Document
+    end
+  
   end
 
 end
