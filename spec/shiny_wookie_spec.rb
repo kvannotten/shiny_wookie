@@ -19,5 +19,18 @@ describe ShinyWookie do
     end
   
   end
+  
+  it "has a gabbler" do 
+    gabbler = ShinyWookie.gabbler
+    
+    gabbler.should be_an_instance_of Gabbler
+  end
+  
+  it "has one gabbler" do
+    gabbler = ShinyWookie.gabbler
+    gabbler2 = ShinyWookie.gabbler
+    
+    gabbler.object_id.should eql gabbler2.object_id
+  end
 
 end

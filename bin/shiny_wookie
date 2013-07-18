@@ -21,9 +21,14 @@ end
 begin
   args = options.parse!
   
-  ShinyWookie::generate_documents amount
+  documents = ShinyWookie::generate_documents amount
+  
+  documents.each_with_index do |document, index|
+    document.write_to_file :prefix => "cv_", :name => Time.now.strftime("%Y_%m_%d_%s"), :suffix => "_#{index}"
+  end
 rescue OptionParser::MissingArgument
   puts "I don't understand what you mean :-("
   puts
   puts options
 end
+

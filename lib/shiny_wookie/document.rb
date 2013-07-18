@@ -1,3 +1,5 @@
+require 'gabbler'
+
 module ShinyWookie
   class Document
     attr_accessor :content
@@ -22,7 +24,11 @@ module ShinyWookie
     private
     
     def generate_content
-      "Some document content #{rand(100)}"
+      sentences = rand(10..100)
+      @content = ShinyWookie.gabbler.sentence
+      sentences.times { @content << ShinyWookie.gabbler.sentence << " " }
+      
+      @content
     end
     
   end

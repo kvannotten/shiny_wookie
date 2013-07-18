@@ -20,11 +20,17 @@ describe ShinyWookie::Document do
     end
   end
   
-  it "writes to a file" do
-    @document.write_to_file :prefix => "cv_", :name => "document", :extension => "txt"
-    
-    IO.read("cv_document.txt").should eql @document.content
-    File.delete("cv_document.txt")
+  context "write file" do
+    it "writes content" do
+      @document.write_to_file :prefix => "cv_", :name => "document", :extension => "txt"
+  
+      IO.read("cv_document.txt").should eql @document.content
+      File.delete("cv_document.txt")
+    end
+  
+    it "has a file name" do
+      expect { @document.write_to_file :prefix => "doc_" }.to raise_error ArgumentError
+    end
   end
   
 end
