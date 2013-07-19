@@ -1,24 +1,19 @@
 # ShinyWookie
+[![Build Status](https://travis-ci.org/kvannotten/shiny_wookie.png?branch=master)](https://travis-ci.org/kvannotten/shiny_wookie)
 
-TODO: Write a gem description
+ShinyWookie is a command line utility that generates documents with random data for you. 
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'shiny_wookie'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install via the command line:
 
     $ gem install shiny_wookie
 
 ## Usage
 
-TODO: Write usage instructions here
+After installation you can run ShinyWookie as follows:
+
+    $ shiny_wookie -a #_OF_DOCUMENTS_YOU_WANT_TO_GENERATE
 
 ## Contributing
 
