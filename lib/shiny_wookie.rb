@@ -8,7 +8,7 @@ module ShinyWookie
     
     return [] if amount.to_i < 1
     
-    0.upto amount.to_i do
+    1.upto amount.to_i do
       documents << Document.new
     end
     
