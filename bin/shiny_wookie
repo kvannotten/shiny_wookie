@@ -16,7 +16,7 @@ options = OptionParser.new do |o|
     amount = k.to_i
   end
   
-  o.on("-f-, "--file FILE" , "learn this document to parse strings from") do |k|
+  o.on("-f", "--file FILE" , "learn this document to parse strings from") do |k|
     file = k unless k.nil? or k.eql? ""
   end 
 
